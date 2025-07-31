@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagannath Jena - Deputy General Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            padding: 20px 100px;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        header .logo {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        header .logo span {
+            color: var(--primary-color);
+        }
+
+        header ul {
+            display: flex;
+            gap: 40px;
+        }
+
+        header ul li {
+            list-style: none;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 1rem;
+            position: relative;
+        }
+
+        header ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        header ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        header ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .banner {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 100vh;
+            padding: 100px;
+            background: var(--bg-white);
+            transition: 0.5s;
+        }
+
+        .content {
+            position: relative;
+            max-width: 600px;
+        }
+
+        .content h2 {
+            font-size: 4em;
+            color: var(--text-dark);
+            transition: 0.5s;
+            margin-bottom: 20px;
+        }
+
+        .content h2 span {
+            color: var(--primary-color);
+        }
+
+        .content .subtitle {
+            font-size: 1.3em;
+            color: var(--text-light);
+            margin: 20px 0;
+            font-weight: 500;
+        }
+
+        .content p {
+            font-size: 1.1em;
+            color: var(--text-light);
+            margin: 20px 0;
+            line-height: 1.7;
+        }
+
+        .content .buttons {
+            margin-top: 40px;
+        }
+
+        .content button {
+            position: relative;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1em;
+            letter-spacing: 0.05em;
+            margin-right: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .content button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .content button.secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .content button.secondary:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Profile Image */
+        .profile-section {
+            position: relative;
+            animation: profileFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes profileFloat {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .profile-container {
+            width: 400px;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .profile-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color), var(--primary-color));
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .profile-container:hover::before {
+            opacity: 1;
+        }
+
+        .profile-container:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+
+        .profile-container:hover .profile-image {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* Stats Cards */
+        .stats-section {
+            padding: 80px 100px;
+            background: var(--bg-light);
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stats-title {
+            text-align: center;
+            font-size: 2.5em;
+            color: var(--text-dark);
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: var(--bg-white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .stat-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1em;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px;
+            background: var(--bg-white);
+            color: var(--text-dark);
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .about h2 span {
+            color: var(--primary-color);
+        }
+
+        .about p {
+            font-size: 1.2em;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 100px;
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        .skills-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skills h2 {
+            font-size: 2.5em;
+            color: var(--text-dark);
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .skills h2 span {
+            color: var(--primary-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card {
+            background: var(--bg-white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .skill-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-color);
+        }
+
+        .skill-icon {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1) rotate(5deg);
+            color: var(--accent-color);
+        }
+
+        .skill-icon {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .skill-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .skill-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .skill-progress {
+            width: 100%;
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 4px;
+            transition: width 2s ease;
+            width: 0%;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 100px;
+            background: var(--bg-white);
+        }
+
+        .experience-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .experience h2 {
+            font-size: 2.5em;
+            color: var(--text-dark);
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .experience h2 span {
+            color: var(--primary-color);
+        }
+
+        .experience-item {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .experience-item.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px) scale(1.02);
+            box-shadow: var(--shadow);
+            border-left-width: 8px;
+        }
+
+        .experience-item h3 {
+            font-size: 1.5em;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .experience-item .company {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .experience-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .experience-item ul {
+            color: var(--text-light);
+            padding-left: 20px;
+        }
+
+        .experience-item ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px;
+            background: var(--bg-light);
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            color: var(--text-dark);
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .contact h2 span {
+            color: var(--primary-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            background: var(--bg-white);
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-icon {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            width: 50px;
+        }
+
+        .contact-text h4 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .contact-text p {
+            color: var(--text-light);
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .chart-title {
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        #performanceChart {
+            max-height: 300px;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1.5em;
+            color: white;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Dark Theme */
+        body.dark {
+            --text-dark: #f9fafb;
+            --text-light: #d1d5db;
+            --bg-light: #1f2937;
+            --bg-white: #111827;
+            --border-color: #374151;
+        }
+
+        body.dark .banner,
+        body.dark .about,
+        body.dark .experience {
+            background: var(--bg-white);
+        }
+
+        body.dark .skills,
+        body.dark .contact,
+        body.dark .stats-section {
+            background: var(--bg-light);
+        }
+
+        body.dark header {
+            background: rgba(17, 24, 39, 0.95);
+            border-bottom-color: var(--border-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 50px;
+            }
+
+            header ul {
+                display: none;
+            }
+
+            .banner {
+                flex-direction: column;
+                padding: 50px;
+                text-align: center;
+            }
+
+            .content h2 {
+                font-size: 2.5em;
+            }
+
+            .profile-container {
+                width: 300px;
+                height: 300px;
+                margin-top: 30px;
+            }
+
+            .stats-section,
+            .about,
+            .skills,
+            .experience,
+            .contact {
+                padding: 50px 30px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .content .buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .content button {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">Jagannath<span>.</span>Jena</a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="banner" id="home">
+        <div class="content">
+            <h2>Hi, I'm <span id="typed-text">Jagannath Jena</span></h2>
+            <p class="subtitle">Deputy General Manager - Commercial Operations</p>
+            <p>Experienced commercial leader with 8+ years of expertise in dredging operations, contract negotiation,
+                and supply chain optimization. Driving operational excellence and managing multi-million dollar
+                projects.</p>
+            <div class="buttons">
+                <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get In
+                    Touch</button>
+                <button class="secondary"
+                    onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+            </div>
+        </div>
+        <div class="profile-section">
+            <div class="profile-container">
+                <img src="image.jpeg" alt="Jagannath Jena" class="profile-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <h2 class="stats-title">Professional Achievements</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="8">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">M+ Contract Value</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="250">0</div>
+                    <div class="stat-label">Successful Negotiations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="95">0</div>
+                    <div class="stat-label">Success Rate %</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2><span>• </span>About Me</h2>
+            <p>I am Jagannath Jena, a seasoned Deputy General Manager with extensive experience in commercial operations
+                across multiple industries. My expertise spans dredging operations, contract negotiations, supply chain
+                optimization, and strategic business development.</p>
+            <p>With a strong technical foundation in Mechanical Engineering from BIET, Odisha, I bring both technical
+                knowledge and commercial acumen to drive organizational growth. I have successfully managed contracts
+                worth over ₹50 Crores and consistently delivered exceptional results through strategic partnerships and
+                process optimization.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="skills-content">
+            <h2><span>• </span>Core Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-handshake"></i></div>
+                    <h3 class="skill-title">Contract Negotiation</h3>
+                    <p class="skill-description">Expert in high-value contract negotiations with 95% success rate in
+                        securing favorable terms.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="95"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-ship"></i></div>
+                    <h3 class="skill-title">Dredging Operations</h3>
+                    <p class="skill-description">Specialized in dredged materials sales and commercial operations
+                        management.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="skill-title">Supply Chain Optimization</h3>
+                    <p class="skill-description">Streamlined procurement processes resulting in 25% cost reduction.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="88"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+                    <h3 class="skill-title">Mechanical Engineering</h3>
+                    <p class="skill-description">Strong technical foundation with Diploma in Mechanical Engineering.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-warehouse"></i></div>
+                    <h3 class="skill-title">Inventory Management</h3>
+                    <p class="skill-description">Optimized warehouse operations and inventory control systems.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="92"></div>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="skill-title">Import/Export Operations</h3>
+                    <p class="skill-description">Managed international trade operations and compliance requirements.</p>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="87"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="experience-content">
+            <h2><span>• </span>Professional Experience</h2>
+            <div class="experience-item">
+                <h3>Deputy General Manager - Commercial</h3>
+                <p class="company">Rashmi Metaliks Limited | Dec 2016 - Present</p>
+                <p>Leading commercial department across Dredging, Seamless, Bio mass, Precast & Admin divisions.
+                    Managing sales of dredged materials and overseeing multi-million dollar projects.</p>
+                <ul>
+                    <li>Increased revenue by 40% through strategic partnerships</li>
+                    <li>Reduced operational costs by 25% via process optimization</li>
+                    <li>Managed contracts worth ₹50+ Crores annually</li>
+                    <li>Led cross-functional teams across multiple divisions</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Purchase Department</h3>
+                <p class="company">Adhunik Metaliks Ltd | Jan 2024</p>
+                <p>Specialized role in procurement and purchase management, gaining valuable experience in vendor
+                    negotiation and supply chain coordination.</p>
+                <ul>
+                    <li>Streamlined vendor selection process</li>
+                    <li>Implemented cost-effective procurement strategies</li>
+                    <li>Enhanced supplier relationship management</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Diploma in Mechanical Engineering</h3>
+                <p class="company">BIET, Odisha | Aug 2001 - Sep 2003</p>
+                <p>Comprehensive technical education covering mechanical systems design, industrial machinery operation,
+                    and manufacturing processes.</p>
+                <ul>
+                    <li>Specialized in industrial machinery systems</li>
+                    <li>Proficient in CAD design and modeling</li>
+                    <li>Strong foundation in manufacturing processes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2><span>• </span>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Kharagpur, West Bengal, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+                        <div class="contact-text">
+                            <h4>LinkedIn</h4>
+                            <p>Connect for professional opportunities</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="contact-text">
+                            <h4>Current Role</h4>
+                            <p>DGM Commercial at Rashmi Metaliks Limited</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-industry"></i></div>
+                        <div class="contact-text">
+                            <h4>Specialization</h4>
+                            <p>Dredging Operations & Commercial Management</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <h3 class="chart-title">Performance Growth</h3>
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </div>
+
+    <script>
+        // Typed.js for hero text
+        document.addEventListener('DOMContentLoaded', function () {
+            new Typed('#typed-text', {
+                strings: ['Jagannath Jena'],
+                typeSpeed: 100,
+                showCursor: false
+            });
+        });
+
+        // Animated counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-count]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const increment = target / 60;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.innerText = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.innerText = Math.ceil(current);
+                    }
+                }, 50);
+            });
+        }
+
+        // Enhanced Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate cards entrance
+                    if (entry.target.classList.contains('stat-card') || entry.target.classList.contains('skill-card')) {
+                        entry.target.classList.add('animate');
+
+                        // Animate skill progress bars
+                        if (entry.target.classList.contains('skill-card')) {
+                            const progressBar = entry.target.querySelector('.skill-progress-bar');
+                            if (progressBar) {
+                                const width = progressBar.getAttribute('data-width');
+                                setTimeout(() => {
+                                    progressBar.style.width = width + '%';
+                                }, 600);
+                            }
+                        }
+                    }
+
+                    // Trigger counter animation
+                    if (entry.target.classList.contains('stats-section')) {
+                        animateCounters();
+                        // Animate stat cards with stagger
+                        const statCards = entry.target.querySelectorAll('.stat-card');
+                        statCards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.classList.add('animate');
+                            }, index * 200);
+                        });
+                    }
+
+                    // Animate skill cards with stagger
+                    if (entry.target.classList.contains('skills-content')) {
+                        const skillCards = entry.target.querySelectorAll('.skill-card');
+                        skillCards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.classList.add('animate');
+                                // Animate progress bar
+                                const progressBar = card.querySelector('.skill-progress-bar');
+                                if (progressBar) {
+                                    const width = progressBar.getAttribute('data-width');
+                                    setTimeout(() => {
+                                        progressBar.style.width = width + '%';
+                                    }, 300);
+                                }
+                            }, index * 150);
+                        });
+                    }
+
+                    // Animate experience items with stagger
+                    if (entry.target.classList.contains('experience-content')) {
+                        const experienceItems = entry.target.querySelectorAll('.experience-item');
+                        experienceItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('animate');
+                            }, index * 200);
+                        });
+                    }
+
+                    // Animate contact items with stagger
+                    if (entry.target.classList.contains('contact-info')) {
+                        const contactItems = entry.target.querySelectorAll('.contact-item');
+                        contactItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateX(0)';
+                            }, index * 150);
+                        });
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Initialize contact items for animation
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateX(-30px)';
+            item.style.transition = 'all 0.4s ease';
+        });
+
+        // Observe elements
+        document.querySelectorAll('.stats-section, .skills-content, .experience-content, .contact-info').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Performance Chart
+        const ctx = document.getElementById('performanceChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024'],
+                    datasets: [{
+                        label: 'Contract Value (Crores)',
+                        data: [15, 22, 28, 35, 42, 48, 52, 58],
+                        borderColor: '#2563eb',
+                        backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#2563eb',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        pointRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            ticks: { color: '#6b7280' }
+                        },
+                        y: {
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                            ticks: { color: '#6b7280' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Theme toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark');
+            const icon = document.getElementById('theme-icon');
+            if (document.body.classList.contains('dark')) {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
+            }
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        console.log('Professional Portfolio Loaded Successfully!');
+    </script>
+</body>
+
+</html>
